@@ -52,3 +52,11 @@
 span {
   margin-right: 15px;
 }
+
+@media screen and (max-width:400px){
+.qoute-container-inner {
+  width:90%;
+
+}
+
+}

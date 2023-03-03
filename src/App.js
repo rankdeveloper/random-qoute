@@ -8,6 +8,7 @@ export default function App() {
     author: 'Marian Edelman',
   });
   const [allQoute, setAllQoute] = React.useState([]);
+
   React.useEffect(() => {
     async function getting() {
       const response = await fetch('https://type.fit/api/quotes');
@@ -28,20 +29,22 @@ export default function App() {
       'container'
     ).style.backgroundColor = `${Colors[randomColor]}`;
     document.getElementById(
-      'container-inner'
+      'quote-box'
     ).style.color = `${Colors[randomColor]}`;
     document.getElementById(
-      'btn'
+      'new -quote'
     ).style.backgroundColor = `${Colors[randomColor]}`;
+
 
     console.log(randomQoute);
     setQoute((prevState) => randomQoute);
+
   }
 
   return (
     <div className="qoute-container" id="container">
-      <div className="qoute-container-inner" id="container-inner">
-        <div className="qoute">
+      <div className="qoute-container-inner" id="quote-box">
+        <div className="qoute" id="text">
           <h4>
             <span>
               <i class="fa-solid fa-quote-left"></i>
@@ -49,15 +52,24 @@ export default function App() {
             {qoute.text}
           </h4>
         </div>
-        <div className="author">
-          <p>{qoute.author}</p>
+        <div className="author" >
+          <p id="author">{qoute.author}</p>
         </div>
 
-        <div className="button">
-          {' '}
-          <button onClick={getQoute} className="btn" id="btn">
-            New qoute
-          </button>
+        <div className="bottom">
+          <div className="social">
+            
+              <i class="fa-brands fa-square-twitter twitter" id="tweet-quote"></i>
+              <i class="fa-brands fa-square-tumblr tumblr"></i>
+     
+          </div>
+
+          <div className="button">
+            {' '}
+            <button onClick={getQoute} className="btn" id="new -quote">
+              New qoute
+            </button>
+          </div>
         </div>
       </div>
     </div>

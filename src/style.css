@@ -39,9 +39,27 @@
   align-items: center;
   justify-content: center;
 }
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.social {
+  display: flex;
+  justify-content: flex-start;
+
+  gap: 1.5rem;
+  font-size: 2.3rem;
+}
+a {
+  text-decoration: none;
+  color: #df7861;
+  cursor: pointer;
+}
 .btn {
   padding: 0.5rem 2rem;
-  margin-top: 10px;
   background-color: #df7861;
   cursor: pointer;
   border: none;
@@ -53,10 +71,15 @@ span {
   margin-right: 15px;
 }
 
-@media screen and (max-width:400px){
-.qoute-container-inner {
-  width:90%;
-
-}
-
+@media screen and (max-width: 400px) {
+  .qoute-container-inner {
+    width: 90%;
+  }
+  .bottom {
+    flex-direction: column-reverse;
+    margin-top: 5px;
+  }
+  .social {
+    margin-top: 10px;
+  }
 }
